@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages/homepage');
+});
+
+Route::get('/layanan', function () {
+    return view('pages/layanan');
+});
+
+Route::get('/history', function () {
+    return view('pages/history');
+});
+
+Route::get('/profile', function () {
+    return view('pages/profile');
+});
+
+Route::get('/login', function () {
+    return view('pages/login');
+});
+
+Route::get('/register', function () {
+    return view('pages/register');
 });
 
 Auth::routes();
