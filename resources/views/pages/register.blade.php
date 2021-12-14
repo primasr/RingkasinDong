@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Sign Up')
+@section('title', 'Register')
 
 @section('content')
     <!-- ======= Hero Section ======= -->

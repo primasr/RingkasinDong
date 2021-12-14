@@ -17,7 +17,7 @@
           </h2>
           <div data-aos="fade-up" data-aos-delay="600">
             <div class="text-center text-lg-start">
-              <a href="{{ asset('layanan.html') }}" class="btn-get-started d-inline-flex align-items-center justify-content-center align-self-center">
+              <a href="{{ route('panduan_layanan') }}" class="btn-get-started d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>Get Started</span>
                 <i class="bi bi-arrow-right"></i>
               </a>

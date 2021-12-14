@@ -1,10 +1,9 @@
 @extends('layouts.main')
 
-@section('title', 'Layanan')
+@section('title', 'Profile')
 
 @section('content')
-
-  <style>
+<style>
     .layanan {
       padding: 0 0 30px 0;
       font-size: 14px;
@@ -22,73 +21,62 @@
     }
     .layanan .footer-newsletter form {
       margin-top: 20px;
-      background: #fff;
       padding: 6px 10px;
       position: relative;
       border-radius: 4px;
-      border: 1px solid #e1ecff;
     }
-    .layanan .footer-newsletter form input[type="text"] {
-      border: 0;
+    .layanan .footer-newsletter form input[type="email"] {
+      border: 1;
       padding: 8px;
-      /* width: calc(100% - 140px); */
+      width: calc(100% - 140px);
     }
     .layanan .footer-newsletter form input[type="submit"] {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      border: 0;
+      /* position: absolute; */
       background: none;
       font-size: 16px;
-      padding: 0 30px;
-      margin: 3px;
       background: #4154f1;
       color: #fff;
       transition: 0.3s;
-      border-radius: 4px;
+      border-radius: 50px;
     }
     body {
       font-family: "Open Sans", sans-serif;
       color: #444444;
     }
-    .upload{
-      padding-top: 10px;
-      padding-bottom: 10px;
-      background: none;
-      font-size: 16px;
-      background: #4154f1;
-      color: #fff;
-      transition: 0.3s;
-      border-radius: 10px;
-    }
   </style>
 
   <!-- ======= Hero Section ======= -->
-  <section id="layanan" class="hero align-items-center">
+  <section id="profile" class="hero align-items-center">
 
     <div class="layanan">
       <div class="footer-newsletter">
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-lg-12 text-center mb-5">
+            <div class="col-lg-12 text-center">
               <h1 data-aos="fade-up">Layanan</h1>
-              <p data-aos="fade-up">Otomasi Ringkasan Form Feedback</p>
+              <p data-aos="fade-up">Pastikan Data Diri pada <a href="{{ route('profile', ['id' => Auth::user()->id]) }}">Profile</a> telah benar</p>
+              <p data-aos="fade-up">Pastikan juga telah memiliki <a href="{{ route('profile', ['id' => Auth::user()->id]) }}">Koin</a> yang mencukupi </p>
             </div>
-            <div class="row" style="padding-left: 500px;padding-right: 500px;" data-aos="fade-up" data-aos-delay="200">
-              <input class="upload" type="submit" name="submit" value="Upload Form">
-            </div>
-            <div class="col-lg-6"  data-aos="fade-up" data-aos-delay="200">
-              <form>
-                <div class="row">
-                  <div class="col-lg-10">
-                    <input type="text" class="form-control input-field" id="kode" placeholder="Inputkan kode">
-                  </div>
-                  <div class="col-lg-2">
-                    <input class="form-rounded button-yellow" type="submit" value="Submit">
-                  </div>
-                </div>
-              </form>
+            <div class="row">
+              <div class="col-12 align-items-center" data-aos="fade-up" data-aos-delay="200">
+                <form method="POST" action="{{ route('layanan_ringkasin', ['id' => Auth::user()->id]) }}">
+                  @csrf
+                    <div class="row">
+                      <div class="col-lg-6 mb-3">
+                        <label for="name_event" class="form-label">Nama Event</label>
+                        <input type="text" class="form-control input-field" id="name_event" name="name_event">
+                      </div>
+                      <div class="col-lg-6 mb-3">
+                        <label for="institusi" class="form-label">Institusi</label>
+                        <input type="text" class="form-control input-field" id="institusi" name="institusi">
+                      </div>
+                    </div>
+                    <div class="row px-3">
+                      <label for="submit_xxx" class="form-label">Note: 20.000 Koin/layanan</label>
+                      <input class="form-rounded button-yellow py-2" type="submit" id="submit_xxx" name="submit" value="Kirim Data">
+                    </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -97,5 +85,4 @@
 
   </section>
   <!-- End Hero -->
-
 @endsection

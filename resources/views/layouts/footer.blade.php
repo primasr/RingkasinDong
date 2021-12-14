@@ -3,7 +3,7 @@
 
     <div class="container">
       <div class="copyright">
-        Kelompok 2 Teknopreneur Kelas 29 <br>
+        {{-- Kelompok 2 Teknopreneur Kelas 29 <br> --}}
         &copy; Copyright <strong><span>FlexStart</span></strong>. All Rights Reserved
       </div>
       <div class="credits">

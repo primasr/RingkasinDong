@@ -54,28 +54,30 @@
           <div class="row justify-content-center">
             <div class="col-lg-12 text-center">
               <h1 data-aos="fade-up">Profile</h1>
+              <h2 data-aos="fade-up">Koin Anda: <span style="color: green">{{ number_format($profile->koin, 0) }}</span></h2>
             </div>
             <div class="row">
-              <div class="col-lg-4 text-center" data-aos="zoom-out" data-aos-delay="200">
+              {{-- <div class="col-lg-4 text-center" data-aos="zoom-out" data-aos-delay="200">
                 <img src="{{ asset('tekno/assets/img/prof.png') }}" class="img-fluid mt-4" alt="">
-              </div>
-              <div class="col-8 align-items-center" data-aos="fade-up" data-aos-delay="200">
-                <form>
+              </div> --}}
+              <div class="col-12 align-items-center" data-aos="fade-up" data-aos-delay="200">
+                <form method="POST" action="{{ route('edit_profile', ['id' => $profile->id]) }}" enctype="multipart/form-data">
+                  @csrf
                     <div class="mb-3">
-                      <label for="namalengkap" class="form-label">Nama Lengkap</label>
-                      <input type="text" class="form-control input-field" id="nama" placeholder="">
+                      <label for="name" class="form-label">Nama Lengkap</label>
+                      <input type="text" class="form-control input-field" id="name" name="name" value="{{ $profile->name }}">
                     </div>
                     <div class="row">
                       <div class="col-lg-6 mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control input-field" id="username" placeholder="">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control input-field" id="email" name="email" value="{{ $profile->email }}">
                       </div>
                       <div class="col-lg-6 mb-3">
-                        <label for="telepon" class="form-label">No. Telepon</label>
-                        <input type="text" class="form-control input-field" id="username" placeholder="">
+                        <label for="phone" class="form-label">No. Telepon</label>
+                        <input type="text" class="form-control input-field" id="phone" name="phone" value="{{ $profile->phone }}">
                       </div>
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                       <div class="col-lg-6 mb-3">
                         <label for="newpassword" class="form-label">New Password</label>
                         <input type="text" class="form-control input-field" id="nik" placeholder="">
@@ -84,9 +86,9 @@
                         <label for="currentpassword" class="form-label">Current Password</label>
                         <input type="text" class="form-control input-field" id="nik" placeholder="">
                       </div>
-                    </div>
+                    </div> --}}
                     <div class="row px-3">
-                      <input class="form-rounded button-yellow py-2" type="submit" name="submit" value="Submit">
+                      <input class="form-rounded button-yellow py-2" type="submit" name="submit" value="Update">
                     </div>
                 </form>
               </div>

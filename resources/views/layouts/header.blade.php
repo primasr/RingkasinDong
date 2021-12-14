@@ -2,7 +2,7 @@
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="{{ asset('index.html') }}" class="logo d-flex align-items-center">
+      <a href="{{ route('homepage') }}" class="logo d-flex align-items-center">
         <!-- <img src="{{ asset(' tekno/assets/img/logo.png') }}" alt=""> -->
         <span>RingkasinDong</span>
       </a>
@@ -12,9 +12,9 @@
         <!-- Right Side Of Navbar -->
         <ul>
 
-          <li class="nav-item">
-              <a class="nav-link" href="#">{{ __('Layanan') }}</a>
-          </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('panduan_layanan') }}">{{ __('Panduan Layanan') }}</a>
+            </li>
 
           <!-- Authentication Links -->
           @guest
@@ -30,14 +30,20 @@
                   </li>
               @endif              
           @else
+
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ route('layanan', ['id' => Auth::user()->id]) }}">{{ __('Layanan') }}</a>
+              </li>
+
               <li class="nav-item dropdown">
                   <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                      {{ Auth::user()->name }}
+                      {{ Auth::user()->email }}
                   </a>
 
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Profile</a>
-                      <a class="dropdown-item" href="#">History</a>
+                      <a class="dropdown-item" href="{{ route('profile', ['id' => Auth::user()->id]) }}">Profile</a>
+                      <a class="dropdown-item" href="{{ route('topup', ['id' => Auth::user()->id]) }}">Top Up Koin</a>
+                      {{-- <a class="dropdown-item" href="{{ route('history', ['id' => Auth::user()->id]) }}">History</a> --}}
 
                       <a class="dropdown-item" href="{{ route('logout') }}"
                           onclick="event.preventDefault();
