@@ -91,6 +91,50 @@
               </form>
             </div>
           </div>
+
+          <br><br><br>
+
+          <div class="row justify-content-center" data-aos="fade-up">
+            <div class="col-lg-12 text-center">
+              <h1 data-aos="fade-up">List Harga Koin</h1>
+            </div>            
+            <table class="table" id="myTable-produksi" style="width:40%">
+              <thead class="text-center">
+                <tr class="bg-green">
+                  <th scope="col-1">No</th>
+                  <th scope="col-5">Jumlah Koin</th>
+                  <th scope="col-6">Harga</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <tr>
+                  <th>1</th>
+                  <td>6.969</td>
+                  <td><button class="btn btn-warning" type="submit"><a href="#" style="text-decoration: none; color: white;">Rp. 10.000</a></button></td>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <td>20.000</td>
+                  <td><button class="btn btn-warning" type="submit"><a href="#" style="text-decoration: none; color: white;">Rp. 25.000</a></button></td>
+                </tr>
+                <tr>
+                  <th>3</th>
+                  <td>69.696</td>
+                  <td><button class="btn btn-warning" type="submit"><a href="#" style="text-decoration: none; color: white;">Rp. 100.000</a></button></td>
+                </tr>
+                <tr>
+                  <th>4</th>
+                  <td>100.000</td>
+                  <td><button class="btn btn-warning" type="submit"><a href="#" style="text-decoration: none; color: white;">Rp. 120.000</a></button></td>
+                </tr>
+                <tr>
+                  <th>5</th>
+                  <td>696.696</td>
+                  <td><button class="btn btn-warning" type="submit"><a href="#" style="text-decoration: none; color: white;">Rp. 1.000.000</a></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
